@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Promo-BukuKita</title>
+</head>
+<body>
+    <H1> Promo BukuKita </H1>
+    <a href="Beranda.html"> Beranda </a> ]
+[ <a href="Katalog.html"> Katalog </a> ]
+[ <a href="Promo.html"> Promo </a> ]
+[ <a href="Tentang Kami.html"> Tentang Kami </a> ]
+[ <a href="Kontak.html"> Kontak </a> ]
+
+<hr>
+<H2> Promo Diskon </H2>
+<label>Harga Barang:</label>
+<input type="number" id="harga"><br><br>
+
+<label>Pilih Benefit:</label>
+<select id="diskon">
+    <option value="10">Member - 10%</option>
+    <option value="15">Pelajar/Mahasiswa - 15%</option>
+    <option value="20">Belanja di atas 500.000 - 20%</option>
+    <option value="25">Promo Khusus - 25%</option>
+</select>
+
+<br><br>
+<button onclick="hitungDiskon()">Hitung</button>
+
+<p id="hasil"></p>
+
+<script>
+    function hitungDiskon() {
+        let harga = Number(document.getElementById("harga").value);
+        let diskon = Number(document.getElementById("diskon").value);
+
+        let potongan = harga * diskon / 100;
+        let total = harga - potongan;
+
+        document.getElementById("hasil").innerHTML =
+            "Harga Awal: Rp" + harga.toLocaleString("id-ID") +
+            "<br>Diskon: " + diskon + "%" +
+            "<br>Potongan: Rp" + potongan.toLocaleString("id-ID") +
+            "<br>Total Bayar: Rp" + total.toLocaleString("id-ID");
+        }
+    </script>
+
+<br><br>
+    Promo berlaku selama persediaan masih tersedia.
+</body>
+</html>
